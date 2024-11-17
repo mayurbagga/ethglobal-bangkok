@@ -1,7 +1,7 @@
 import { createInstance, MatomoProvider } from '@m4tt72/matomo-tracker-react';
 import Head from 'next/head';
 import React, { useEffect } from 'react';
-import { Layout } from '../components/layout';
+import { Layout } from '../components/Layout';
 import '../styles/global.css';
 import { ShellProvider } from '../utils/shellProvider';
 import { ThemeProvider } from '../utils/themeProvider';

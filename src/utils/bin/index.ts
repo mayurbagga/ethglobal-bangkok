@@ -5,7 +5,7 @@ export * from './theme';
 export * from './utils';
 export * from './weather';
 export * from './neofetch';
-export { web3 } from './web3';
+export { web3help, network, connect, balance, transfer, ens} from './web3';
 export { blockscout } from './blockscout';
 
 // Additional useful commands
@@ -28,21 +28,25 @@ export const commands = {
   social: 'Display social links',
   theme: 'Change theme',
   weather: 'Check weather',
-  web3: 'Web3 utilities'
+  web3help: 'Web3 utilities',
+  connect: 'Connect to Web3 wallet',
+  balance: 'Check wallet balance',
+  transfer: 'Transfer ETH',
+  ens: 'Check ENS domains for an address'
 };
-
 
 export const commandExists = (command: string): boolean => {
   const cmd = command.split(' ')[0];
   return Object.keys(bin).indexOf(cmd) !== -1;
 };
+
 export const bin = {
   help: () => commands.help,
   clear: () => commands.clear,
   blockchain: () => commands.blockscout,
   banner: () => 'Banner message...',
   welcome: () => 'Welcome message...',
-  summon: () => 'Connecting to Web3 wallet...',
+  connect: () => 'Connecting to Web3 wallet...',
   balance: () => 'Checking wallet balance...',
   transfer: () => 'Transfer tokens...',
   nft: () => 'NFT commands...',
@@ -50,5 +54,7 @@ export const bin = {
   gas: () => 'Checking gas prices...',
   market: () => 'Getting market prices...',
   history: () => 'Transaction history...',
+  web3help: () => 'Web3 utilities',
+  ens: () => 'Check ENS domains for an address'
   // Add other commands as needed
 };
